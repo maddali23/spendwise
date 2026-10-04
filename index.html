@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpendWise AI — Smart Expense Tracker & Personal Financial Intelligence</title>
+  <meta name="description" content="SpendWise AI is an intelligent financial companion that tracks expenses, uncovers spending patterns, performs subscription audits, and provides actionable AI suggestions to accelerate your savings." />
+  <meta name="keywords" content="expense tracker, smart budget, personal finance, AI finance assistant, spending patterns, money manager, financial health" />
+  <meta name="theme-color" content="#080B11" />
+  
+  <!-- Favicon / Web App Manifest -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>" />
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="./src/styles/index.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Left Navigation Sidebar -->
+    <nav class="app-sidebar" aria-label="Main Navigation">
+      <div class="brand-wrapper">
+        <div class="brand-icon-box">💎</div>
+        <div>
+          <div class="brand-title">
+            SpendWise <span class="brand-tag">AI</span>
+          </div>
+          <div class="brand-subtitle">Smart Financial Tracker</div>
+        </div>
+      </div>
+
+      <ul class="nav-menu" role="menu">
+        <li role="none">
+          <button class="nav-item-btn active" data-view="dashboard" id="nav-btn-dashboard" role="menuitem">
+            <span class="nav-item-icon">📊</span>
+            <span>Dashboard</span>
+          </button>
+        </li>
+        <li role="none">
+          <button class="nav-item-btn" data-view="transactions" id="nav-btn-transactions" role="menuitem">
+            <span class="nav-item-icon">💳</span>
+            <span>Transactions</span>
+          </button>
+        </li>
+        <li role="none">
+          <button class="nav-item-btn" data-view="analytics" id="nav-btn-analytics" role="menuitem">
+            <span class="nav-item-icon">📈</span>
+            <span>Patterns & AI</span>
+            <span class="nav-badge ai-badge">Live</span>
+          </button>
+        </li>
+        <li role="none">
+          <button class="nav-item-btn" data-view="budgets" id="nav-btn-budgets" role="menuitem">
+            <span class="nav-item-icon">🎯</span>
+            <span>Budgets & Goals</span>
+          </button>
+        </li>
+        <li role="none">
+          <button class="nav-item-btn" data-view="subscriptions" id="nav-btn-subscriptions" role="menuitem">
+            <span class="nav-item-icon">🔄</span>
+            <span>Subscriptions</span>
+          </button>
+        </li>
+        <li role="none">
+          <button class="nav-item-btn" data-view="scanner" id="nav-btn-scanner" role="menuitem">
+            <span class="nav-item-icon">🧾</span>
+            <span>Receipt OCR</span>
+            <span class="nav-badge">New</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-copilot-card" id="sidebar-copilot-trigger" role="button" tabindex="0">
+          <div class="copilot-header">
+            <span>✨</span>
+            <span>SpendWise Copilot</span>
+          </div>
+          <div class="copilot-desc">
+            Ask questions, analyze burn rates & log expenses with AI.
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="app-main" id="main-content">
+      <!-- Top Sticky App Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <div class="global-search-box">
+            <span class="search-icon">🔍</span>
+            <input 
+              type="text" 
+              class="search-input" 
+              id="global-search-input" 
+              placeholder="Search expenses, merchants, tags... (Press '/' to focus)" 
+              aria-label="Search expenses"
+            />
+            <span class="search-shortcut">/</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="btn btn-ai" id="header-copilot-btn" title="Open SpendWise AI Assistant (Key: C)">
+            <span>✨</span> Ask Copilot
+          </button>
+
+          <button class="btn btn-primary" id="header-add-expense-btn" title="Quick Add Expense (Key: N)">
+            <span>+</span> Add Expense
+          </button>
+
+          <button class="btn btn-secondary btn-icon" id="theme-toggle-btn" title="Switch Theme">
+            ☀️
+          </button>
+
+          <button class="btn btn-secondary btn-icon" id="settings-btn" title="Settings & Data">
+            ⚙️
+          </button>
+        </div>
+      </header>
+
+      <!-- Dynamic View Container -->
+      <div id="view-container"></div>
+    </main>
+  </div>
+
+  <!-- Main JavaScript Entrypoint -->
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
